@@ -13,10 +13,10 @@
     <nav class="navbar">
         <div class="logo">Guía Turística</div>
         <div class="links">
-            <a href="#objeto1">Inicio</a>
-            <a href="#">Sitios Turísticos</a>
-            <a href="#">Tradiciones</a>
-            <a href="#">Cultura</a>
+            <a href="#Inicio">Inicio</a>
+            <a href="#Sitios">Sitios Turísticos</a>
+            <a href="#Tradiciones">Tradiciones</a>
+            <a href="#Nosotros">Nosotros</a>
             <a href="#">Contacto</a>
         </div>
         <div class="cuenta">
@@ -24,17 +24,17 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="Inicio">
         <div class="hero-content">
             <h2>Guía Turística</h2>
             <h1>San Pedro de Macorís</h1>
         </div>
     </header>
 
-    <section class="intro">
+    <section class="intro" id="Sitios">
         <h2>Sitios Turísticos</h2>
         <div class="cards">
-            <div class="card">
+            <div class="card1">
                 <h3>Cueva de las Maravillas</h3>
                 <p>Una cueva subterránea con impresionantes formaciones naturales y arte taíno.</p>
             </div>
@@ -62,29 +62,56 @@
                 <p>Un símbolo icónico de la ciudad, con arquitectura gótica impresionante.</p> 
         </div>
     </section>
-    <section class="tradiciones">
-        <h2>Tradiciones, culturas</h2>
+    <section class="tradiciones" id="Tradiciones">
+        <h2>Tradiciones y culturas</h2>
         <p>Descubre la esencia vibrante de San de Macorís, donde las tradiciones y culturas se entrelazan en un abrazo eterno.</p>
         <div class="tradiciones-grid">
-            <img src="images/Gaga-4.jpg" alt="Cultura 1">
-            <img src="images/Presentación del Teatro Cocolo Danzante de los Guloyas de San Pedro de Macorís 2.jpeg" alt="Cultura 2">
-            <img src="images/f2.jpg" alt="Cultura 3">
+            <img src="images/Gaga-4.jpg" alt="Cultura 1" class="Imagen">
+            <img class="Imagen" src="images/Presentación del Teatro Cocolo Danzante de los Guloyas de San Pedro de Macorís 2.jpeg" alt="Cultura 2">
+            <img class="Imagen" src="images/f2.jpg" alt="Cultura 3">
         
         </div>
         <div class="tradiciones-grid">
-            <img src="images/san pedro cocola.jpeg" alt="Cultura 4">
-            <img src="images/imagecontent974313620180326180406-0865fbf5-focus-0.05-0.53-608-342.jpg" alt="Cultura 5">
-            <img src="images/1.jpg" alt="Cultura 6">
+            <img class="Imagen" src="images/san pedro cocola.jpeg" alt="Cultura 4">
+            <img class="Imagen" src="images/imagecontent974313620180326180406-0865fbf5-focus-0.05-0.53-608-342.jpg" alt="Cultura 5">
+            <img class="Imagen" src="images/1.jpg" alt="Cultura 6">
+        </div> 
+
+        <div id="modal" class="modal">
+            <span id="close">&times;</span>
+            <img id="modal-img" class="modal-content" src="" alt="">
         </div>
+        <script>
+            document.querySelectorAll('.Imagen').forEach(img => {
+                img.addEventListener('click', () => {
+                    const modal = document.getElementById('modal');
+                    const modalImg = document.getElementById('modal-img');
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                });
+            });
+            
+            document.getElementById('close').addEventListener('click', () => {
+                document.getElementById('modal').style.display = 'none';
+            });
+            
+            document.getElementById('modal').addEventListener('click', (e) => {
+                if (e.target.id === 'modal') {
+                    document.getElementById('modal').style.display = 'none';
+                }
+            });
+            </script>
     </section>
     
-    <section class="mision" id="objeto1">
+    <section class="mision" id="Nosotros">
         <div class="mision-box">
             <h2>Misión, visión y valores</h2>
             <p><strong>Misión:</strong> Nuestra misión es promover y preservar la riqueza cultural y turística de San Pedro de Macorís, ofreciendo a los visitantes una experiencia única que resalte su historia, tradiciones y atractivos.</p>
             <p><strong>Visión:</strong> Aspiramos a ser el principal referente de referencia para buscar información sobre San Pedro de Macorís, contribuyendo al desarrollo sostenible de la región y fomentando un turismo responsable.</p>
             <p><strong>Valores:</strong> Nos guía la pasión por la cultura, el respeto por el patrimonio local, la sostenibilidad y el compromiso con la excelencia en el servicio. Estos valores nos consolidan tanto para los turistas como para los habitantes de la ciudad.</p>
         </div>
+        <button class="Reservas">Reservas</button>  
     </section>
+    
 </body>
 </html>
