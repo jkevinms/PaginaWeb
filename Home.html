@@ -18,6 +18,7 @@
             <a href="#Tradiciones">Tradiciones</a>
             <a href="#Nosotros">Nosotros</a>
             <a href="#">Contacto</a>
+            <a href="#">Artesanías</a>
         </div>
         <div class="cuenta">
             <a href="#">Mi Cuenta</a>
@@ -25,7 +26,13 @@
     </nav>
 
     <header class="hero" id="Inicio">
-        <div class="hero-content">
+     
+           
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="images/SAN PEDRO DE MACORIS , REPUBLICA DOMINICANA - Hola Dominicano (720p, h264).mp4" type="video/mp4">
+           
+            </video>
+            <div class="hero-content">
             <h2>Guía Turística</h2>
             <h1>San Pedro de Macorís</h1>
         </div>
@@ -38,26 +45,26 @@
                 <h3>Cueva de las Maravillas</h3>
                 <p>Una cueva subterránea con impresionantes formaciones naturales y arte taíno.</p>
             </div>
-            <div class="card">
+            <div class="card2">
                 <h3>Playas Juan Dolio</h3>
                 <p>Playas hermosas con arena blanca y aguas cristalinas, perfectas para relajarse.</p>
             </div>
-            <div class="card">
+            <div class="card3">
                 <h3>Catedral San Pedro Apóstol</h3>
                 <p>Un símbolo icónico de la ciudad, con arquitectura gótica impresionante.</p>
                 
             </div>
         </div>
         <div class="cards">
-            <div class="card">
+            <div class="card4">
                 <h3>Cueva de las Maravillas</h3>
                 <p>Una cueva subterránea con impresionantes formaciones naturales y arte taíno.</p>
             </div>
-            <div class="card">
+            <div class="card5">
                 <h3>Playas Juan Dolio</h3>
                 <p>Playas hermosas con arena blanca y aguas cristalinas, perfectas para relajarse.</p>
             </div>
-            <div class="card">
+            <div class="card6">
                 <h3>Catedral San Pedro Apóstol</h3>
                 <p>Un símbolo icónico de la ciudad, con arquitectura gótica impresionante.</p> 
         </div>
@@ -81,25 +88,8 @@
             <span id="close">&times;</span>
             <img id="modal-img" class="modal-content" src="" alt="">
         </div>
-        <script>
-            document.querySelectorAll('.Imagen').forEach(img => {
-                img.addEventListener('click', () => {
-                    const modal = document.getElementById('modal');
-                    const modalImg = document.getElementById('modal-img');
-                    modal.style.display = 'flex';
-                    modalImg.src = img.src;
-                });
-            });
-            
-            document.getElementById('close').addEventListener('click', () => {
-                document.getElementById('modal').style.display = 'none';
-            });
-            
-            document.getElementById('modal').addEventListener('click', (e) => {
-                if (e.target.id === 'modal') {
-                    document.getElementById('modal').style.display = 'none';
-                }
-            });
+        <script src="site.js">
+          
             </script>
     </section>
     
