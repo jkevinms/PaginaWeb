@@ -21,31 +21,34 @@ document.getElementById('modal').addEventListener('click', (e) => {
 
 // seleccionar cada tarjeta individual, no el contenedor
 document.querySelectorAll('.cards > div').forEach(card => {
-    card.addEventListener('click', () => {
-        const modal = document.getElementById('modalcards');
-        const modalContent = document.getElementById('cards1');
-        
-        // coloca el contenido del card en el modal
-        modalContent.innerHTML = `
-            <h3>${card.querySelector('h3').innerText}</h3>
-            <p>${card.querySelector('p').innerText}</p>
-        `;
-        
-        modal.style.display = 'flex';
-    });
+  card.addEventListener('click', () => {
+      const modal = document.getElementById('modalcards');
+      const modalContent = document.getElementById('cards1');
+
+      const title = card.querySelector('h3')?.innerText || '';
+      const paragraph = card.querySelector('p')?.innerText || '';
+      const imgSrc = card.querySelector('img')?.src || '';
+
+      modalContent.innerHTML = `
+          <h3>${title}</h3>
+          <p>${paragraph}</p>
+          ${imgSrc ? `<img src="${imgSrc}" alt="card image or gif" class="card-img-gif" />` : ''}
+      `;
+
+      modal.style.display = 'flex';
+  });
 });
 
-// Botón de cerrar
 document.getElementById('close1').addEventListener('click', () => {
-    document.getElementById('modalcards').style.display = 'none';
+  document.getElementById('modalcards').style.display = 'none';
 });
 
-// También cerrar al hacer clic fuera del contenido
 document.getElementById('modalcards').addEventListener('click', (e) => {
-    if (e.target.id === 'modalcards') {
-        document.getElementById('modalcards').style.display = 'none';
-    }
+  if (e.target.id === 'modalcards') {
+      document.getElementById('modalcards').style.display = 'none';
+  }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const viewport = document.querySelector('.carousel__viewport');
